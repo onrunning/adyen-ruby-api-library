@@ -1,4 +1,4 @@
-module Adyen
+module AdyenAPI
   class AdyenError < StandardError
     attr_reader :code, :response, :request
 

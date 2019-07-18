@@ -1,6 +1,6 @@
 require_relative 'service'
 
-module Adyen
+module AdyenAPI
   module Marketpay
     class Marketpay
       attr_accessor :service
@@ -11,15 +11,15 @@ module Adyen
       end
 
       def account
-        @account ||= Adyen::Marketpay::Account.new(@client)
+        @account ||= AdyenAPI::Marketpay::Account.new(@client)
       end
 
       def fund
-        @fund ||= Adyen::Marketpay::Fund.new(@client)
+        @fund ||= AdyenAPI::Marketpay::Fund.new(@client)
       end
 
       def notification
-        @notification ||= Adyen::Marketpay::Notification.new(@client)
+        @notification ||= AdyenAPI::Marketpay::Notification.new(@client)
       end
     end
 

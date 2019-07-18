@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe Adyen do
+RSpec.describe AdyenAPI do
   before(:all) do
     @shared_values = {
       client: nil
@@ -8,8 +8,8 @@ RSpec.describe Adyen do
   end
 
   it "creates Adyen client" do
-    @shared_values[:client] = Adyen::Client.new
-    expect(@shared_values[:client]).is_a? Adyen::Client
+    @shared_values[:client] = AdyenAPI::Client.new
+    expect(@shared_values[:client]).is_a? AdyenAPI::Client
   end
 
   it "sets env to :mock" do
@@ -26,15 +26,15 @@ RSpec.describe Adyen do
 
   it "fails payments call without WS user and password" do
     expect{ @shared_values[:client].payments.authorise("{}") }.
-      to raise_error(Adyen::AuthenticationError)
+      to raise_error(AdyenAPI::AuthenticationError)
     @shared_values[:client].ws_user = @shared_values[:ws_user]
     expect{ @shared_values[:client].payments.authorise("{}") }.
-      to raise_error(Adyen::AuthenticationError)
+      to raise_error(AdyenAPI::AuthenticationError)
   end
 
   it "fails a checkout call without api key" do
     expect{ @shared_values[:client].checkout.payment_methods("{}") }.
-      to raise_error(Adyen::AuthenticationError)
+      to raise_error(AdyenAPI::AuthenticationError)
     @shared_values[:client].api_key = "api_key"
   end
 end

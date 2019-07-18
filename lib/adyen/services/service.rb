@@ -1,4 +1,4 @@
-module Adyen
+module AdyenAPI
   class Service
     attr_accessor :service, :version
 
