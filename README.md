@@ -34,7 +34,7 @@ Follow the rest of our guides from the [documentation](https://adyen.github.io/a
 ```ruby
 require 'adyen-ruby-api-library'
 
-adyen = Adyen::Client.new
+adyen = AdyenAPI::Client.new
 
 # for API-key based implementations
 adyen.api_key = 'AF5XXXXXXXXXXXXXXXXXXXX'
@@ -134,7 +134,7 @@ response = adyen.checkout.payments({
 ## Support
 
 If you have any problems, questions or suggestions, create an issue here or send your inquiry to support@adyen.com.
-  
+
 ## Licence
 
 MIT license. For more information, see the LICENSE file.

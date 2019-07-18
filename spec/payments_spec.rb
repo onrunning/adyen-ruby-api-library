@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe Adyen::Payments, service: "payments service" do
+RSpec.describe AdyenAPI::Payments, service: "payments service" do
   # client instance to be used in dynamically generated tests
   client = create_client(:basic)
 

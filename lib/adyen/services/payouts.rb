@@ -1,6 +1,6 @@
 require_relative 'service'
 
-module Adyen
+module AdyenAPI
   class Payouts < Service
     attr_accessor :version
     DEFAULT_VERSION = 30

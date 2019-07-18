@@ -1,7 +1,7 @@
 require "spec_helper"
 require_relative "../lib/adyen/errors"
 
-RSpec.describe Adyen::Payments, service: "recurring service" do
+RSpec.describe AdyenAPI::Payments, service: "recurring service" do
   # client instance to be used in dynamically generated tests
   client = create_client(:basic)
 
