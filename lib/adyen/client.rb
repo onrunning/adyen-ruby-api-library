@@ -38,10 +38,8 @@ module AdyenAPI
         "http://localhost:#{@mock_port}"
       else
         case service
-        when "Checkout"
+        when "Checkout", "CheckoutUtility"
           url = "https://checkout-#{@env}.adyen.com/checkout"
-        when "CheckoutUtility"
-          url = "https://checkout-#{@env}.adyen.com"
         when "Account", "Fund", "Notification"
           url = "https://cal-#{@env}.adyen.com/cal/services"
         when "Recurring", "Payment", "Payout"
