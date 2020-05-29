@@ -59,7 +59,7 @@ module AdyenAPI
 
     # construct full URL from service and endpoint
     def service_url(service, action, version)
-      if service == "Checkout"
+      if service == "Checkout" || service == "CheckoutUtility"
         "#{service_url_base(service)}/v#{version}/#{action}"
       else
         "#{service_url_base(service)}/#{service}/v#{version}/#{action}"
